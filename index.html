@@ -9,6 +9,7 @@
     <script>
 
         //Computer's Choice
+
         function getComputerChoice() {
              choice = Math.floor(Math.random() * 3 + 1)           
             if (choice == 3) {
@@ -33,7 +34,6 @@
         }
 
         //Single Round
-
 
         function playRound() {
             let humanChoice = getHumanChoice();
@@ -65,7 +65,7 @@
                 
             } else if (humanChoice == "none" ) {
                 console.log ("You didn't choose a weapon...");
-                
+
             } else {
                 console.log("Draw; no winners or losers here...");
                 
