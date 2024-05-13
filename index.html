@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>rock paper scissors</title>
 </head>
 <body>
     <script>
@@ -38,39 +38,60 @@
         }
 
         //Single Round
-        const humanChoice = getHumanChoice()
-        const computerChoice = getComputerChoice()
+        let humanChoice = getHumanChoice()
+        let computerChoice = getComputerChoice()
 
         function playRound(humanChoice, computerChoice) {
             if (humanChoice == "rock" && computerChoice == "scissors" ) {
                 console.log ("You win! Rock beats scissors!");
                 humanScore++;
+                
             } else if (humanChoice == "paper" && computerChoice == "rock") {
                 console.log("You Win! Paper beats rock!");
                 humanScore++;
+                
             } else if (humanChoice == "scissors" && computerChoice == "paper") {
                 console.log ("You Win! Scissors beat paper!");
                 humanScore++;
+                
             } else if (humanChoice == "rock" && computerChoice == "paper") {
                 console.log ("You lose! Paper beats rock...");
                 computerScore++; 
+                
             } else if (humanChoice == "paper" && computerChoice == "scissors") {
                 console.log("You lose! Scissors beat paper...");
                  computerScore++; 
+                 
             } else if (humanChoice == "scissors" && computerChoice == "rock") {
                 console.log ("You lose! Rock beats scissors...");
                 computerScore++; 
+                
             } else if (humanChoice == "none" ) {
                 console.log ("You didn't choose a weapon...");
             } else {
                 console.log("Draw; no winners or losers here...");
-                humanScore++; 
-                computerScore++;     
-        }  
+                
+            }
             console.log(humanScore)
-            console.log(computerScore)
-       }
-       console.log(playRound(humanChoice, computerChoice))
+            console.log(computerScore)    
+        }
+
+        //Entire Game
+
+        let oneRound = playRound(humanChoice, computerChoice) 
+        let counter = 0  
+
+        function playGame(oneRound) {
+        if (counter == 5 && computerScore > humanScore) {
+        console.log ("Game over! You lose.");
+        } else if (counter == 5 && humanScore > computerScore) {
+        console.log ("Congratulations! You win!"); 
+        }  else {
+        counter++;
+        }    
+        console.log(counter)
+}
+    console.log(playGame(oneRound))
     </script>
 </body>
 </html>
