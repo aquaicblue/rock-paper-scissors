@@ -82,9 +82,9 @@
         function playGame() {
 
             if (counter == 5 && humanScore > computerScore) {
-                return ("Congratulations! You win!")
+                console.log ("Congratulations! You win!")
             } else if (counter == 5 && computerScore > humanScore) {
-                return ("Game over! You lose.");
+                console.log ("Game over! You lose.");            
             } else {
                 counter++;
                 playRound();
@@ -95,7 +95,7 @@
                 console.log (playGame())
             }
 
-            console.log
+            console.log (playGame())
         
     </script>
 </body>
