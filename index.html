@@ -6,7 +6,23 @@
     <title>rock paper scissors</title>
 </head>
 <body>
+
+    <header class="header">
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <div class="body">
+        <ul>
+            <li> I choose you:</li><button class="rock">Rock</button>
+            <li> I choose you:</li><button class="paper">Paper</button>
+            <li> I choose you:</li><button class="scissors">Scissors</button>
+        </ul>
+    </div>
+
     <script>
+
+const gameButton = document.querySelectorAll("button")
+
+gameButton.addEventListener('click', playRound())
 
         //Computer's Choice
 
@@ -22,12 +38,12 @@
         // Human Choice
 
         function getHumanChoice () {
-            let answer = prompt("Choose Your Weapon!");
-            if (answer.toLowerCase() == "rock") {
+           let answer = gameButton.value;
+            if (answer === "rock") {
                 return "rock";
-            } else if (answer.toLowerCase() == "scissors") {
+            } else if (answer === "scissors") {
                 return "scissors";
-            } else if (answer.toLowerCase() == "paper") {
+            } else if (answer === "paper") {
                 return "paper";
             } else return "none"
 
@@ -89,12 +105,13 @@
                 playRound();
             }              
             }
-        
-            for (let i = 0; i < 5; i++) {
-                console.log (playGame())
-            }
 
             console.log (playGame())
+
+        //buttons for game
+
+
+
         
     </script>
 </body>
