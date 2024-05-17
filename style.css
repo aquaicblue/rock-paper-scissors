@@ -1,0 +1,66 @@
+*{
+    font-family: monospace;
+    color: goldenrod;
+    background-color: white;
+    font-size: 24px; 
+}
+
+button {
+    border-radius: 12px;
+    border: solid 3px goldenrod;
+}
+
+.header {
+    font-weight: bold;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: solid 3px;
+    height: 100px;
+}
+
+.header h1 {
+    font-size: 40px;
+    justify-self: center;
+    align-self: center;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s,
+.p,
+.r {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    
+
+}
+
+.footer {
+    display: flex;
+    border: solid 3px;
+    justify-content: space-around;
+
+}
+
+.round-box,
+.computer-score-box,
+.player-score-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+
+}
+
+.footer-header {
+    border: solid 3px goldenrod;
+    padding: 8px;
+}
