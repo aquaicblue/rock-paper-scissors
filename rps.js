@@ -21,42 +21,54 @@ const r = "rock"
 const p = "paper"
 const s = "scissors"
 
+
 function getHumanChoice (e) {
-    if (e.target.classList.contains('rock')) {
+    if (e.currentTarget.classList.contains('rock')) {
      playRound(r)
-   } else if (e.target.classList.contains('scissors')) {
+   } else if (e.currentTarget.classList.contains('scissors')) {
       playRound(s);
-   } else if (e.target.classList.contains('paper')) {
+   } else if (e.currentTarget.classList.contains('paper')) {
       playRound(p)
     } else return "none"
  }
 
 //Single Round
 
+//Entire Game
+
+let humanScore = document.querySelector(".player-score")
+let computerScore = document.querySelector(".computer-score")
+let round = document.querySelector("round-score")
+
+
+
+
+
 function playRound(humanChoice) {
    let computerChoice = getComputerChoice(); 
 
-   if ( humanChoice === r && computerChoice == "scissors" ) {
+   if ( humanChoice === r && computerChoice === "scissors" ) {
        console.log ("You win! Rock beats scissors!");
        humanScore++;
+
        
-   } else if (humanChoice === p && computerChoice == "rock") {
+   } else if (humanChoice === p && computerChoice === "rock") {
        console.log("You Win! Paper beats rock!");
        humanScore++;
        
-   } else if (humanChoice === s && computerChoice == "paper") {
+   } else if (humanChoice === s && computerChoice === "paper") {
        console.log ("You Win! Scissors beat paper!");
        humanScore++;
        
-   } else if (humanChoice === r && computerChoice == "paper") {
+   } else if (humanChoice === r && computerChoice === "paper") {
        console.log ("You lose! Paper beats rock...");
        computerScore++; 
        
-   } else if (humanChoice === p && computerChoice == "scissors") {
+   } else if (humanChoice === p && computerChoice === "scissors") {
        console.log("You lose! Scissors beat paper...");
         computerScore++; 
         
-   } else if (humanChoice === s && computerChoice == "rock") {
+   } else if (humanChoice === s && computerChoice === "rock") {
        console.log ("You lose! Rock beats scissors...");
        computerScore++; 
    } else {
@@ -65,10 +77,9 @@ function playRound(humanChoice) {
    }  
 }
 
-//Entire Game
-let humanScore = 0
-let computerScore = 0
-let counter = 0
+
+
+// //Entire Game
 
 // function playGame() {
 //    if (counter == 5 && humanScore > computerScore) {
@@ -83,8 +94,8 @@ let counter = 0
 //    }              
 //    }
 
-//    for (let i = 0; i < 5; i++) {
-//        console.log (playGame())
-//    }
+// //    for (let i = 0; i < 5; i++) {
+// //        console.log (playGame())
+// //    }
 
-//    console.log (playGame())
+// //    console.log (playGame())
