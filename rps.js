@@ -36,21 +36,38 @@ function getHumanChoice (e) {
 
 //Entire Game
 
-let humanScore = document.querySelector(".player-score")
-let computerScore = document.querySelector(".computer-score")
-let round = document.querySelector("round-score")
+let humanScore = 0
+let computerScore = 0
+let round = 1
 
+let humanScoreCount = document.createTextNode(humanScore)
+let computerScoreCount = document.createTextNode(computerScore)
+let roundScore = document.createTextNode(round)
 
+document.querySelector(".player-score").appendChild(humanScoreCount)
+document.querySelector(".computer-score").appendChild(computerScoreCount)
+document.querySelector(".round-score").appendChild(roundScore)
 
 
 
 function playRound(humanChoice) {
-   let computerChoice = getComputerChoice(); 
+    let humanScore = 0
+    let computerScore = 0
+    let round = 1
+
+    let humanScoreCount = document.createTextNode(humanScore)
+    let computerScoreCount = document.createTextNode(computerScore)
+    let roundScore = document.createTextNode(round)
+
+    document.querySelector(".player-score").appendChild(humanScoreCount)
+    document.querySelector(".computer-score").appendChild(computerScoreCount)
+    document.querySelector(".round-score").appendChild(roundScore)
+    
+    let computerChoice = getComputerChoice(); 
 
    if ( humanChoice === r && computerChoice === "scissors" ) {
        console.log ("You win! Rock beats scissors!");
        humanScore++;
-
        
    } else if (humanChoice === p && computerChoice === "rock") {
        console.log("You Win! Paper beats rock!");
@@ -76,8 +93,6 @@ function playRound(humanChoice) {
        
    }  
 }
-
-
 
 // //Entire Game
 
