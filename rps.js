@@ -37,80 +37,75 @@ function getHumanChoice (e) {
 //Entire Game
 
 let humanScore = 0
-let computerScore = 0
-let round = 1
+let computerScore =0
+let round = 0
 
-let humanScoreCount = document.createTextNode(humanScore)
-let computerScoreCount = document.createTextNode(computerScore)
-let roundScore = document.createTextNode(round)
-
-document.querySelector(".player-score").appendChild(humanScoreCount)
-document.querySelector(".computer-score").appendChild(computerScoreCount)
-document.querySelector(".round-score").appendChild(roundScore)
-
-
+document.querySelector(".player-score").textContent = humanScore
+document.querySelector(".computer-score").textContent = computerScore
+document.querySelector(".round-score").textContent = round
 
 function playRound(humanChoice) {
-    let humanScore = 0
-    let computerScore = 0
-    let round = 1
-
-    let humanScoreCount = document.createTextNode(humanScore)
-    let computerScoreCount = document.createTextNode(computerScore)
-    let roundScore = document.createTextNode(round)
-
-    document.querySelector(".player-score").appendChild(humanScoreCount)
-    document.querySelector(".computer-score").appendChild(computerScoreCount)
-    document.querySelector(".round-score").appendChild(roundScore)
     
     let computerChoice = getComputerChoice(); 
 
    if ( humanChoice === r && computerChoice === "scissors" ) {
+    document.querySelector(".message").textContent = "You win! Rock beats scissors!"
        console.log ("You win! Rock beats scissors!");
        humanScore++;
+        checkScore();
        
    } else if (humanChoice === p && computerChoice === "rock") {
+    document.querySelector(".message").textContent = "You Win! Paper beats rock!"
        console.log("You Win! Paper beats rock!");
        humanScore++;
+       checkScore();
        
    } else if (humanChoice === s && computerChoice === "paper") {
+    document.querySelector(".message").textContent = "You Win! Scissors beat paper!"
        console.log ("You Win! Scissors beat paper!");
        humanScore++;
+       checkScore();
        
    } else if (humanChoice === r && computerChoice === "paper") {
+    document.querySelector(".message").textContent = "You lose! Paper beats rock..."
        console.log ("You lose! Paper beats rock...");
        computerScore++; 
+       checkScore();
        
    } else if (humanChoice === p && computerChoice === "scissors") {
+    document.querySelector(".message").textContent = "You lose! Scissors beat paper..."
        console.log("You lose! Scissors beat paper...");
         computerScore++; 
+        checkScore();
         
    } else if (humanChoice === s && computerChoice === "rock") {
+    document.querySelector(".message").textContent = "You lose! Rock beats scissors..."
        console.log ("You lose! Rock beats scissors...");
        computerScore++; 
+       checkScore();
    } else {
+    document.querySelector(".message").textContent = "Draw; no winners or losers here..."
+    checkScore();
        console.log("Draw; no winners or losers here...");
        
    }  
 }
 
-// //Entire Game
+//Entire Game
 
-// function playGame() {
-//    if (counter == 5 && humanScore > computerScore) {
-//        console.log ("Congratulations! You win!")
-//    } else if (counter == 5 && computerScore > humanScore) {
-//        console.log ("Game over! You lose.");            
-//    } else if (counter == 5 && computerScore == humanScore) {
-//        console.log ("It's a tie! No winners or losers here...")
-//    } else {
-//        counter++;
-//        playRound();
-//    }              
-//    }
+let count = 0
 
-// //    for (let i = 0; i < 5; i++) {
-// //        console.log (playGame())
-// //    }
-
-// //    console.log (playGame())
+function checkScore() {
+   if (count === 4 && humanScore > computerScore) {
+        document.querySelector(".message").textContent = "Congratulations! You win!"
+       console.log ("Congratulations! You win!")
+   } else if (count === 4 && computerScore > humanScore) {
+        document.querySelector(".message").textContent = "Game over! You lose."
+       console.log ("Game over! You lose.");            
+   } else if (count === 4 && computerScore == humanScore) {
+       console.log ("It's a tie! No winners or losers here...")
+       document.querySelector(".message").textContent = "It's a tie! No winners or losers here..."
+   } else {
+        count++;
+   }              
+   }
