@@ -40,9 +40,6 @@ let humanScore = 0
 let computerScore =0
 let round = 0
 
-document.querySelector(".player-score").textContent = humanScore
-document.querySelector(".computer-score").textContent = computerScore
-document.querySelector(".round-score").textContent = round
 
 function playRound(humanChoice) {
     
@@ -51,34 +48,62 @@ function playRound(humanChoice) {
    if ( humanChoice === r && computerChoice === "scissors" ) {
     document.querySelector(".message").textContent = "You win! Rock beats scissors!"
     humanScore++;
+    round++;
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
     checkScore();
        
    } else if (humanChoice === p && computerChoice === "rock") {
     document.querySelector(".message").textContent = "You Win! Paper beats rock!"
-       humanScore++;
-       checkScore();
+    humanScore++;
+    round++;
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
+    checkScore();
        
    } else if (humanChoice === s && computerChoice === "paper") {
     document.querySelector(".message").textContent = "You Win! Scissors beat paper!"
-       humanScore++;
-       checkScore();
+    humanScore++;
+    round++;
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
+    checkScore();
        
    } else if (humanChoice === r && computerChoice === "paper") {
     document.querySelector(".message").textContent = "You lose! Paper beats rock..."
-       computerScore++; 
-       checkScore();
+    computerScore++; 
+    round++;
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
+    checkScore();
        
    } else if (humanChoice === p && computerChoice === "scissors") {
     document.querySelector(".message").textContent = "You lose! Scissors beat paper..."
-        computerScore++; 
-        checkScore();
+    computerScore++; 
+    round++;
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
+    checkScore();
         
    } else if (humanChoice === s && computerChoice === "rock") {
     document.querySelector(".message").textContent = "You lose! Rock beats scissors..."
-       computerScore++; 
+    computerScore++; 
+    round++;
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
        checkScore();
    } else {
+    round++;
     document.querySelector(".message").textContent = "Draw; no winners or losers here..."
+    document.querySelector(".player-score").textContent = humanScore;
+    document.querySelector(".computer-score").textContent = computerScore;
+    document.querySelector(".round-score").textContent = round;
     checkScore();
        
    }  
