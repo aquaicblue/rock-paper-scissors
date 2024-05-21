@@ -50,43 +50,36 @@ function playRound(humanChoice) {
 
    if ( humanChoice === r && computerChoice === "scissors" ) {
     document.querySelector(".message").textContent = "You win! Rock beats scissors!"
-       console.log ("You win! Rock beats scissors!");
-       humanScore++;
-        checkScore();
+    humanScore++;
+    checkScore();
        
    } else if (humanChoice === p && computerChoice === "rock") {
     document.querySelector(".message").textContent = "You Win! Paper beats rock!"
-       console.log("You Win! Paper beats rock!");
        humanScore++;
        checkScore();
        
    } else if (humanChoice === s && computerChoice === "paper") {
     document.querySelector(".message").textContent = "You Win! Scissors beat paper!"
-       console.log ("You Win! Scissors beat paper!");
        humanScore++;
        checkScore();
        
    } else if (humanChoice === r && computerChoice === "paper") {
     document.querySelector(".message").textContent = "You lose! Paper beats rock..."
-       console.log ("You lose! Paper beats rock...");
        computerScore++; 
        checkScore();
        
    } else if (humanChoice === p && computerChoice === "scissors") {
     document.querySelector(".message").textContent = "You lose! Scissors beat paper..."
-       console.log("You lose! Scissors beat paper...");
         computerScore++; 
         checkScore();
         
    } else if (humanChoice === s && computerChoice === "rock") {
     document.querySelector(".message").textContent = "You lose! Rock beats scissors..."
-       console.log ("You lose! Rock beats scissors...");
        computerScore++; 
        checkScore();
    } else {
     document.querySelector(".message").textContent = "Draw; no winners or losers here..."
     checkScore();
-       console.log("Draw; no winners or losers here...");
        
    }  
 }
@@ -94,6 +87,7 @@ function playRound(humanChoice) {
 //Entire Game
 
 let count = 0
+document.querySelector(".message").textContent = "Choose your weapon!"
 
 function checkScore() {
    if (count === 4 && humanScore > computerScore) {

@@ -22,6 +22,10 @@ button {
     width: 150px;
 }
 
+h1 {
+    background-color: blanchedalmond;
+}
+
 .header {
     font-weight: bold;
     display: flex;
@@ -29,6 +33,7 @@ button {
     justify-content: center;
     border: solid 3px;
     height: 100px;
+    background-color: blanchedalmond;
 }
 
 .header h1 {
@@ -54,6 +59,20 @@ button {
 
 }
 
+
+
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 3px;
+    border-left: solid 3px;
+    border-right: solid 3px;
+    height: 100px;
+    background-color: blanchedalmond;
+}
+
+
 .footer {
     display: flex;
     border: solid 3px;
@@ -75,4 +94,6 @@ button {
 .footer-header {
     border: solid 3px goldenrod;
     padding: 8px;
+    background-color: #f4f4f4;
 }
+
