@@ -122,7 +122,7 @@ function checkScore() {
    } else if (count === 4 && computerScore > humanScore) {
      document.querySelector(".message").textContent = "Game over! You lose."          
    } else if (count === 4 && computerScore == humanScore) {
-     document.querySelector(".message").textContent = "It's a tie! No winners or losers here..."
+     document.querySelector(".message").textContent = "Tie game! Rematch?"
    } else {
      count++;
    }              

@@ -11,10 +11,11 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition-duration: 0.4s;
 }
 
-
-.rock {
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
 .fist-pic {
@@ -59,8 +60,6 @@ h1 {
 
 }
 
-
-
 .message{
     display: flex;
     justify-content: center;
@@ -70,14 +69,14 @@ h1 {
     border-right: solid 3px;
     height: 100px;
     background-color: blanchedalmond;
+    font-weight: bold;
 }
 
 
 .footer {
     display: flex;
     border: solid 3px;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
 }
 
 .round-box,
