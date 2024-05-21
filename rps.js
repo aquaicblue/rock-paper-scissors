@@ -32,8 +32,6 @@ function getHumanChoice (e) {
     } else return "none"
  }
 
-//Single Round
-
 //Entire Game
 
 let humanScore = 0
@@ -45,66 +43,70 @@ function playRound(humanChoice) {
     
     let computerChoice = getComputerChoice(); 
 
-   if ( humanChoice === r && computerChoice === "scissors" ) {
-    document.querySelector(".message").textContent = "You win! Rock beats scissors!"
-    humanScore++;
-    round++;
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
-    checkScore();
+ if (round >= 5){
+     document.querySelector(".message").textContent = "Refresh the page to play again!"
+
+    } else if ( humanChoice === r && computerChoice === "scissors" ) {
+     document.querySelector(".message").textContent = "You win! Rock beats scissors!"
+     humanScore++;
+     round++;
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
+     checkScore();
        
    } else if (humanChoice === p && computerChoice === "rock") {
-    document.querySelector(".message").textContent = "You Win! Paper beats rock!"
-    humanScore++;
-    round++;
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
+     document.querySelector(".message").textContent = "You Win! Paper beats rock!"
+     humanScore++;
+     round++;
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
     checkScore();
        
    } else if (humanChoice === s && computerChoice === "paper") {
-    document.querySelector(".message").textContent = "You Win! Scissors beat paper!"
-    humanScore++;
-    round++;
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
-    checkScore();
+     document.querySelector(".message").textContent = "You Win! Scissors beat paper!"
+     humanScore++;
+     round++;
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
+     checkScore();
        
    } else if (humanChoice === r && computerChoice === "paper") {
-    document.querySelector(".message").textContent = "You lose! Paper beats rock..."
-    computerScore++; 
-    round++;
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
-    checkScore();
+     document.querySelector(".message").textContent = "You lose! Paper beats rock..."
+     computerScore++; 
+     round++;
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
+     checkScore();
        
    } else if (humanChoice === p && computerChoice === "scissors") {
-    document.querySelector(".message").textContent = "You lose! Scissors beat paper..."
-    computerScore++; 
-    round++;
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
-    checkScore();
+     document.querySelector(".message").textContent = "You lose! Scissors beat paper..."
+     computerScore++; 
+     round++;
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
+     checkScore();
         
    } else if (humanChoice === s && computerChoice === "rock") {
-    document.querySelector(".message").textContent = "You lose! Rock beats scissors..."
-    computerScore++; 
-    round++;
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
-       checkScore();
+     document.querySelector(".message").textContent = "You lose! Rock beats scissors..."
+     computerScore++; 
+     round++;
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
+     checkScore();
+
    } else {
-    round++;
-    document.querySelector(".message").textContent = "Draw; no winners or losers here..."
-    document.querySelector(".player-score").textContent = humanScore;
-    document.querySelector(".computer-score").textContent = computerScore;
-    document.querySelector(".round-score").textContent = round;
-    checkScore();
+     round++;
+     document.querySelector(".message").textContent = "Draw; no winners or losers here..."
+     document.querySelector(".player-score").textContent = humanScore;
+     document.querySelector(".computer-score").textContent = computerScore;
+     document.querySelector(".round-score").textContent = round;
+     checkScore();
        
    }  
 }
@@ -116,15 +118,12 @@ document.querySelector(".message").textContent = "Choose your weapon!"
 
 function checkScore() {
    if (count === 4 && humanScore > computerScore) {
-        document.querySelector(".message").textContent = "Congratulations! You win!"
-       console.log ("Congratulations! You win!")
+     document.querySelector(".message").textContent = "Congratulations! You win!"
    } else if (count === 4 && computerScore > humanScore) {
-        document.querySelector(".message").textContent = "Game over! You lose."
-       console.log ("Game over! You lose.");            
+     document.querySelector(".message").textContent = "Game over! You lose."          
    } else if (count === 4 && computerScore == humanScore) {
-       console.log ("It's a tie! No winners or losers here...")
-       document.querySelector(".message").textContent = "It's a tie! No winners or losers here..."
+     document.querySelector(".message").textContent = "It's a tie! No winners or losers here..."
    } else {
-        count++;
+     count++;
    }              
    }
